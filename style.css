@@ -1,0 +1,91 @@
+/* ===== Colors (light mode) ===== */
+:root {
+  --bg: #fafaf9;
+  --text: #1c1917;
+  --muted: #78716c;
+  --line: #e7e5e4;
+  --box: #f0efed;
+  --accent: #2563eb;
+}
+
+/* ===== Colors (dark mode, follows the visitor's system setting) ===== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161514;
+    --text: #f5f5f4;
+    --muted: #a8a29e;
+    --line: #2e2c2a;
+    --box: #232120;
+    --accent: #7aa2ff;
+  }
+}
+
+/* ===== Base ===== */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0 auto;
+  max-width: 720px;
+  padding: 64px 20px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+}
+
+h1 { font-size: 2.25rem; margin: 16px 0 4px; letter-spacing: -0.02em; }
+h2 { font-size: 1.1rem; margin: 0 0 16px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+section { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--line); }
+
+/* ===== Intro ===== */
+.intro { text-align: center; }
+.tagline { color: var(--muted); margin: 0; }
+.links { display: flex; gap: 20px; justify-content: center; margin-top: 16px; }
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 0 auto;
+  object-fit: cover;
+}
+
+/* ===== Placeholders (grey boxes until you add real media) ===== */
+.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--box);
+  border: 1px dashed var(--line);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ===== Gallery ===== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+}
+.gallery > * {
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* ===== Video ===== */
+.video, video, iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  border: 0;
+}
+.caption { color: var(--muted); font-size: 0.9rem; }
+
+/* ===== Footer ===== */
+footer { margin-top: 64px; text-align: center; color: var(--muted); font-size: 0.85rem; }
